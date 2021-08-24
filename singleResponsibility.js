@@ -11,9 +11,9 @@ class CaloriesTracker {
         }
     }
 
-    logCalorieSurplus(){
-        console.log('Max calories exceeded');
-    }
+    // logCalorieSurplus(){
+    //     console.log('Max calories exceeded');
+    // }
 }
 
 const ct = new CaloriesTracker(2000);

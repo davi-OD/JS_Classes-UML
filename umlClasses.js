@@ -7,31 +7,22 @@ class Employee{
    
     }
     //Methods
-    employee(){
-
+    employeeDetails(){
+        console.log("Employee name: "+this.name +"| Start Date: "+this.started);
     }
 
-    setName(){
-
-    }
-
-    setStarted(){
-
-    }
 }
 
 class FullTimeEmployee extends Employee{
-    constructor(name, started, pension){
+    constructor(name, started){
         super(name, started);
-        this.pension = pension;
+        
     }
 
-    fullTimeEmployee(){
-
+    employeeDetails(){
+        console.log("Employee name: "+this.name +"| Start Date: "+this.started +"| Status: Full-Time");
     }
-    setPensiontier(){
 
-    }
 }
 
 class PartTimeEmployee extends Employee{
@@ -39,13 +30,25 @@ class PartTimeEmployee extends Employee{
         super(name, started);
         this.hoursWorked= hoursWorked;
     }
-    partTimeEmployee(){
-
+    employeeDetails(){
+        console.log("Employee name: "+this.name +"| Start Date: "+this.started +"| Status: Part-Time");
     }
-    setHoursWorked(){
 
+    setHoursWorked(timeArrived, timeLeft){
+        let hoursWorked = timeLeft - timeArrived;
+    }
+
+    getHours(){
+        return hoursWorked;
     }
 }
+let employee = new Employee("Super", "Super");
+
+employee = new FullTimeEmployee("Daya", "24/05");
+employee.employeeDetails();
+employee = new PartTimeEmployee("Haywire", "24/07");
+employee.employeeDetails();
+
 
 
 //Abstraction
@@ -61,16 +64,20 @@ class Customer {
 
 
         let discountCalculator = function(){
-
+            let discount = monthlyPurchases - 500
         };
 
         this.accountName = function(){
+            console.log("Account: "+firstName + lastName);
             discountCalculator();
         };
     }
     
-
 }
+let customer = new Customer("david", "Zake", "Subscriber");
+customer.accountName();
+console.log();
+
 
 //Encapsulation
 class Student {

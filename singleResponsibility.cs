@@ -81,3 +81,31 @@ class Tag : Post
 
 //The override keyword is used is used to method to create a same name method 
 //with same signature in a derived class
+
+
+// Interface solution
+{
+    interface IPost
+    {
+        void CreatePost(Database db, string postMessage);
+    }
+}
+
+class Post : IPost
+{
+    {
+        Post CreatePost()
+        {
+            db.Add(postMessage)
+        } 
+    }
+}
+
+class Tag : IPost
+{
+     void CreatePost()
+    {
+        db.AddAsTag(postMessage);
+    }   
+}
+

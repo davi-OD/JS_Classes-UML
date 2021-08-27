@@ -1,4 +1,4 @@
-//Create the base class 'Post' to carry the parent function
+
 class Post
 {
     void CreatePost(Database db, string postMessage)
@@ -7,18 +7,10 @@ class Post
     }
 }
 
-//Create a child class and reference it to the base class using ':'
-
 class Tag : Post
 {
     override void CreatePost(Database db, string postMessage)
     {
-        if (postMessage.StartsWith("#"))
-        {
-            return db.AddAsTag(postMessage);
-        }
+         db.AddAsTag(postMessage);
     }
 }
-
-//The override keyword is used is used to method to create a same name method 
-with same signature in a derived class
